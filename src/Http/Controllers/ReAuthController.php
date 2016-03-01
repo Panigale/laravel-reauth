@@ -9,15 +9,5 @@ use gocrew\LaravelReAuth\Reauthenticates;
 class ReAuthController extends Controller
 {
     use Reauthenticates;
-
-    /**
-     * Create a new reauth controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
 }

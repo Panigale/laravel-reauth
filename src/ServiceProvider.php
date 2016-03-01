@@ -2,9 +2,9 @@
 
 namespace gocrew\LaravelReAuth;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as SP;
 
-class ServiceProvider extends ServiceProvider
+class ServiceProvider extends SP
 {
     /**
      * Register the service provider.
@@ -26,13 +26,16 @@ class ServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             $router = app('router');
 
-            $router->group(['namespace' => 'gocrew\LaravelReAuth\Http\Controllers'], function ($router) {
+            $router->group([
+                'namespace' => 'gocrew\LaravelReAuth\Http\Controllers',
+                'middleware' => 'web'
+            ], function ($router) {
                 require __DIR__.'/Http/routes.php';
             });
         }
 
         $this->loadViewsFrom(
-            __DIR__.'/../views', 'gocrew'
+            __DIR__.'/views', 'gocrew'
         );
 
         $this->publishes([
