@@ -71,7 +71,7 @@ trait Reauthenticates
      */
     protected function handleUserVerifiedAuthentication(Request $request)
     {
-        $this->rememberReAuthVerification();
+        $this->rememberReAuthVerification($request);
 
         if (method_exists($this, 'reauthenticated')) {
             return $this->reauthenticated($request, Auth::guard($this->getGuard())->user());
