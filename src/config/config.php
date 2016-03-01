@@ -10,6 +10,6 @@ return [
     | Number of minutes a successful Reauthentication is valid.
     |
     */
-    'reauthTime' => 30 ,
+    'reauthTime' => 30,
 
 ];

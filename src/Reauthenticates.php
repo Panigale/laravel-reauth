@@ -51,20 +51,22 @@ trait Reauthenticates
     /**
      * Validate the user re-auth request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return void
      */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
-            $this->authEntity() => 'required'
+            $this->authEntity() => 'required',
         ]);
     }
 
     /**
      * Send the response after the user was re-authenticated.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     protected function handleUserVerifiedAuthentication(Request $request)
@@ -81,7 +83,8 @@ trait Reauthenticates
     /**
      * Get the failed login response instance.
      *
-     * @param \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     protected function sendFailedLoginResponse(Request $request)
@@ -95,7 +98,8 @@ trait Reauthenticates
     /**
      * Remember re-auth verification.
      *
-     * @param \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return void
      */
     protected function rememberReAuthVerification(Request $request)
@@ -116,11 +120,11 @@ trait Reauthenticates
                 : 'These credentials do not match our records.';
     }
 
-    /**
-     * Get the login entity to be used by the controller.
-     *
-     * @return string
-     */
+   /**
+    * Get the login entity to be used by the controller.
+    *
+    * @return string
+    */
    public function authEntity()
    {
        return property_exists($this, 'authEntity')

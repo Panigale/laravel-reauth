@@ -2,12 +2,11 @@
 
 namespace gocrew\LaravelReAuth\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use gocrew\LaravelReAuth\Reauthenticates;
+use Illuminate\Routing\Controller;
 
 class ReAuthController extends Controller
 {
     use Reauthenticates;
-    
+
 }

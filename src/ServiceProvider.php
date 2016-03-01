@@ -23,7 +23,7 @@ class ServiceProvider extends SP
      */
     public function boot()
     {
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             $router = app('router');
 
             $router->group([
