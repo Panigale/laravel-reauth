@@ -23,7 +23,7 @@ class ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             $router = app('router');
 
             $router->group(['namespace' => 'gocrew\LaravelReAuth\Http\Controllers'], function ($router) {
