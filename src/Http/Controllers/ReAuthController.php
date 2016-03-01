@@ -8,5 +8,4 @@ use Illuminate\Routing\Controller;
 class ReAuthController extends Controller
 {
     use Reauthenticates;
-
 }
