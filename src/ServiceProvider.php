@@ -27,8 +27,8 @@ class ServiceProvider extends SP
             $router = app('router');
 
             $router->group([
-                'namespace' => 'gocrew\LaravelReAuth\Http\Controllers',
-                'middleware' => 'web'
+                'namespace'  => 'gocrew\LaravelReAuth\Http\Controllers',
+                'middleware' => 'web',
             ], function ($router) {
                 require __DIR__.'/Http/routes.php';
             });
