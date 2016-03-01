@@ -34,7 +34,7 @@ In your `app\Http\Kernel.php` file, add the reauth middleware to the `$routeMidd
 ```php
 protected $routeMiddleware = [
     // ...
-    'reauth'         => \TubeOne\LaravelReAuth\Http\Middleware\Reauthenticate::class,
+    'reauth'         => \gocrew\LaravelReAuth\Http\Middleware\Reauthenticate::class,
     // ...
 ];
 ```
