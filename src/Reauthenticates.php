@@ -112,7 +112,7 @@ trait Reauthenticates
     protected function getFailedLoginMessage()
     {
         return trans()->has('auth.failed')
-                ? trans(('auth.failed')
+                ? trans('auth.failed')
                 : 'These credentials do not match our records.';
     }
 

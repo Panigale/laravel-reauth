@@ -7,7 +7,6 @@ use Illuminate\Routing\Controller;
 use gocrew\LaravelReAuth\Reauthenticates;
 
 class ReAuthController extends Controller
-class ReAuthController extends Controller
 {
     use Reauthenticates;
 
