@@ -37,7 +37,7 @@ class Reauthenticate
     {
         $reauthenticatedAt = Carbon::createFromTimestamp($session->get('reauthenticated.at', 0))->diffInMinutes();
 
-        return (!$session->get('reauthenticated.verified', false)) &&
+        return (!$session->get('reauthenticated.verified', false)) ||
             ($reauthenticatedAt > config('reauth.reauthTime'));
     }
 }
