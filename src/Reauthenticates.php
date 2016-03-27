@@ -17,7 +17,7 @@ trait Reauthenticates
     public function getReauthenticate()
     {
         $view = property_exists($this, 'reauthView')
-            ? $this->loginView
+            ? $this->reauthView
             : 'auth.reauthenticate';
 
         if (view()->exists($view)) {
