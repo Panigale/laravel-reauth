@@ -9,4 +9,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class ReAuthController extends Controller
 {
     use Reauthenticates, ValidatesRequests;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }
